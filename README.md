@@ -1,6 +1,6 @@
 # Cloudinary Upload Input
 
-A reusable input component that uploads the selected files to Cloudinary.
+A reusable input component that uploads the selected files to [Cloudinary](https://www.cloudinary.com/).
 
 | prop         | default | Description                                                  |
 | ------------ | ------- | ------------------------------------------------------------ |

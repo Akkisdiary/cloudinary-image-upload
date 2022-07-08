@@ -1,7 +1,8 @@
 {
   "author": "Akshay Shegaonkar",
   "name": "cloudinary-image-upload",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "homepage": "https://akkisdiary.github.io/cloudinary-image-upload",
   "private": true,
   "dependencies": {
     "@mantine/core": "^4.2.12",
@@ -23,6 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,7 +51,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
-    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4"
   }

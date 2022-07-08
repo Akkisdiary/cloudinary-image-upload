@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cloudinary-image-upload/static/css/main.7f43b7c4.css",
+    "main.js": "/cloudinary-image-upload/static/js/main.26d03c0c.js",
+    "index.html": "/cloudinary-image-upload/index.html",
+    "main.7f43b7c4.css.map": "/cloudinary-image-upload/static/css/main.7f43b7c4.css.map",
+    "main.26d03c0c.js.map": "/cloudinary-image-upload/static/js/main.26d03c0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f43b7c4.css",
+    "static/js/main.26d03c0c.js"
+  ]
+}

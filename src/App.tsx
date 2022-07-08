@@ -125,7 +125,7 @@ const App: React.FC<{}> = (_) => {
                 translate="no"
                 className="py-2 pr-2 text-xs font-medium leading-6"
               >
-                The upload preset to use for uploading files to your account
+                The upload preset to use for uploading files to your account. Only supports unsigned uploads.
               </td>
             </tr>
             <tr>

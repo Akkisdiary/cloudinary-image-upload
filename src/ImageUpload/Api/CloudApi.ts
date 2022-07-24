@@ -1,4 +1,4 @@
-import { CloudAsset } from "../types";
+import { CloudAsset } from '../types';
 
 export interface CloudConfig {
   cloudName: string;
@@ -18,28 +18,27 @@ class CloudApi {
     return `https://api.cloudinary.com/v1_1/${this.cloudName}/image/upload`;
   };
 
-  uploadImage = async (img: File): Promise<CloudAsset> => {
-    return await new Promise((res, rej) => {
-      const form = new FormData();
+  uploadImage = async (
+    img: File,
+    success: (a: CloudAsset) => void,
+    error: (e: { message: string }) => void
+  ) => {
+    const form = new FormData();
+    form.append('file', img);
+    form.append('upload_preset', this.uploadPreset);
 
-      form.append("file", img);
-      form.append("upload_preset", this.uploadPreset);
-
-      try {
-        fetch(this.uploadEndpoint(), {
-          method: "POST",
-          body: form,
-        })
-          .then((r) => r.json())
-          .then(res);
-      } catch {
-        rej({
-          error: {
-            message: `Error uploading img <${img.name}>`,
-          },
-        });
-      }
-    });
+    try {
+      const res = await fetch(this.uploadEndpoint(), {
+        method: 'POST',
+        body: form,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        success(data);
+      } else error(data);
+    } catch {
+      error({ message: 'Error uploading img!' });
+    }
   };
 }
 

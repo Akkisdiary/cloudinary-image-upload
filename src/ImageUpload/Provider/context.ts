@@ -1,17 +1,21 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 
-import { Asset, CloudAsset } from "../types";
+import { Asset, CloudAsset } from '../types';
 
 interface IImageUploadCtx {
   queue: Asset[];
   updateQueue: (queue: Asset[]) => void;
-  uploadImg: (i: File) => Promise<CloudAsset | null>;
+  uploadImg: (
+    f: File,
+    success: (d: CloudAsset) => void,
+    error: (e: { message: string }) => void
+  ) => void;
 }
 
 const ImageUploadCtx = createContext<IImageUploadCtx>({
   queue: [],
   updateQueue: () => {},
-  uploadImg: async () => null,
+  uploadImg: () => {},
 });
 
 export const useImageUpload = () => useContext(ImageUploadCtx);

@@ -12,10 +12,7 @@ const AssetManager: React.FC<{
   const [queue, setQueue] = useState<Asset[]>([]);
 
   const hasAllImgsUploaded = (_queue: Asset[]) =>
-    _queue.reduce(
-      (acc, q) => acc && q.status === AssetStatus.UPLOAD_COMPLETE,
-      true
-    );
+    _queue.reduce((acc, q) => acc && q.status === AssetStatus.UPLOAD_COMPLETE, true);
 
   const updateQueue = (updatedQueue: Asset[]) => {
     setQueue(updatedQueue);
@@ -28,9 +25,7 @@ const AssetManager: React.FC<{
   const api = new CloudApi(config);
 
   return (
-    <ImageUploadCtx.Provider
-      value={{ queue, updateQueue, uploadImg: api.uploadImage }}
-    >
+    <ImageUploadCtx.Provider value={{ queue, updateQueue, uploadImg: api.uploadImage }}>
       {children}
     </ImageUploadCtx.Provider>
   );

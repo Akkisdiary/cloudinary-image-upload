@@ -1,0 +1,7 @@
+{
+  "name": "cloudinary-image-upload",
+  "jest": {
+    "verbose": true
+  },
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"]
+}

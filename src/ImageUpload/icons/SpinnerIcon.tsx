@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ISpinnerProps {}
 
@@ -9,6 +9,8 @@ const Spinner: React.FC<ISpinnerProps> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
+      data-testid="spinner"
+      role="status"
     >
       <circle
         className="opacity-25"
